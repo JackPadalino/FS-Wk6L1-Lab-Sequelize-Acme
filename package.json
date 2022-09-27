@@ -1,0 +1,23 @@
+{
+  "name": "fs-wk6l1-lab-acme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev":"nodemon server.js",
+    "seed:dev":"nodemon seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "pg": "^8.8.0",
+    "sequelize": "^6.23.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
