@@ -16,7 +16,6 @@ const seedDB=async()=>{
         {name:'chicago'},
         {name:'london'},
     ];
-    
     const things = [
         {name:'hat'},
         {name:'bag'},
