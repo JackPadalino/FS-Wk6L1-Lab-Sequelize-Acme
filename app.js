@@ -8,6 +8,10 @@ const {
     home
 } = require('./views/home')
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public'));
+//app.use(methodOverride('_method'));
+
 const PORT = 3000;
 
 app.get("/", async(req,res,next)=>{
@@ -19,6 +23,22 @@ app.get("/", async(req,res,next)=>{
             Souvenir.findAll({include:[Person,Place,Thing]})
         ]);
         res.send(home(people,places,things,souvenirs))
+    }catch(error){
+        next(error);
+    };
+});
+
+app.post('/',async(req,res,next)=>{
+    try{
+        const personId = req.body.personId;
+        const thingId = req.body.thingId;
+        const placeId = req.body.placeId;
+        await Souvenir.create({
+            personId:personId,
+            thingId:thingId,
+            placeId:placeId
+        });
+        res.redirect('/')
     }catch(error){
         next(error);
     };
