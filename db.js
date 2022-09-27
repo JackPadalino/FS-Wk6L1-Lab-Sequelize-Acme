@@ -23,7 +23,7 @@ const Thing = db.define('thing',{
     }
 });
 
-const Souvenir = db.define('souvenir');
+const Souvenir = db.define('souvenir',{});
 
 Souvenir.belongsTo(Person);
 Souvenir.belongsTo(Place);
