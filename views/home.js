@@ -35,12 +35,7 @@ function home(people,places,things,souvenirs){
         )}
     </ul>
     <h2>Souvenir purchases</h2>
-    <ul>
-        ${souvenirs.map(souvenir=>{
-            return `<li>${souvenir.person.name} purchased a ${souvenir.thing.name} from ${souvenir.place.name}</li>`
-        }
-        )}
-    </ul>
+    <p>Create a new souvenir purchase by selecting a person, the item they bought, and the place where they bought it!</p>
     <form method='POST'>
         <label for="personId">Person</label>
         <select name='personId'>
@@ -74,6 +69,13 @@ function home(people,places,things,souvenirs){
         </select>
         <button type="submit">Submit</button>
     </form>
+    
+    <ul>
+        ${souvenirs.map(souvenir=>{
+            return `<li>${souvenir.person.name} purchased a ${souvenir.thing.name} from ${souvenir.place.name}</li>`
+        }
+        )}
+    </ul>
 </body>
 `;
 };
