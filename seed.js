@@ -22,12 +22,15 @@ const seedDB=async()=>{
         {name:'shirt'},
         {name:'cup'},
     ];
-    let Promises = people.map((person) => Person.create(person));
-    Promise.all(Promises);
-    Promises = places.map((place) => Place.create(place));
-    Promise.all(Promises);
-    Promises = things.map((thing) => Thing.create(thing));
-    Promise.all(Promises);
+    const peoplePromises = people.map((person) => Person.create(person));
+    const placePromises = places.map((place) => Place.create(place));
+    const thingPromises = things.map((thing) => Thing.create(thing));
+    const promisesArr = [
+        peoplePromises,
+        placePromises,
+        thingPromises
+    ];
+    promisesArr.forEach(arr=>Promise.all(arr));
 };
 
 seedDB();
