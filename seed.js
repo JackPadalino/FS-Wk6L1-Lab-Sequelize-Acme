@@ -10,22 +10,23 @@ const seedDB=async()=>{
         {name:'lucy'},
         {name:'ethyl'},
     ];
-    let Promises = people.map((person) => Person.create(person));
-    Promise.all(Promises);
     const places = [
         {name:'paris'},
         {name:'nyc'},
         {name:'chicago'},
         {name:'london'},
     ];
-    Promises = places.map((place) => Place.create(place));
-    Promise.all(Promises);
+    
     const things = [
         {name:'hat'},
         {name:'bag'},
         {name:'shirt'},
         {name:'cup'},
     ];
+    let Promises = people.map((person) => Person.create(person));
+    Promise.all(Promises);
+    Promises = places.map((place) => Place.create(place));
+    Promise.all(Promises);
     Promises = things.map((thing) => Thing.create(thing));
     Promise.all(Promises);
 };
