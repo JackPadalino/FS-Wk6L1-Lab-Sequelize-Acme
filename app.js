@@ -7,10 +7,11 @@ const {
 const {
     home
 } = require('./views/home')
+const methodOverride = require('method-override');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
-//app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 const PORT = 3000;
 
@@ -41,6 +42,18 @@ app.post('/',async(req,res,next)=>{
         res.redirect('/')
     }catch(error){
         next(error);
+    };
+});
+
+// delete a souvenir
+app.delete('/:id',async(req,res,next)=>{
+    try{
+        const souvenirId = req.params.id;
+        const souvenir = await Souvenir.findByPk(souvenirId);
+        await souvenir.destroy();
+        res.redirect('/');
+    }catch(error){
+        next(error)
     };
 });
 
