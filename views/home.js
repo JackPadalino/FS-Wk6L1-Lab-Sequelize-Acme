@@ -9,7 +9,7 @@ function home(people,places,things,souvenirs){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>People, Places, and Things!</title>
+    <title>People, Places, and Things</title>
 </head>
 <body>
     <h1>Acme People, Places, and Things</h1>
@@ -36,7 +36,7 @@ function home(people,places,things,souvenirs){
     </ul>
     <h2>Souvenir purchases</h2>
     <p>Create a new souvenir purchase by selecting a person, the item they bought, and the place where they bought it!</p>
-    <form method='POST'>
+    <form method='POST' action="/">
         <label for="personId">Person</label>
         <select name='personId'>
             ${people.map(person => {
@@ -72,9 +72,17 @@ function home(people,places,things,souvenirs){
     
     <ul>
         ${souvenirs.map(souvenir=>{
-            return `<li>${souvenir.person.name} purchased a ${souvenir.thing.name} from ${souvenir.place.name}</li>`
+            //return `<li>${souvenir.person.name} purchased a ${souvenir.thing.name} from ${souvenir.place.name}</li>`
+            return `
+            <form method="POST" action="/${souvenir.id}?_method=DELETE">
+                <li>${souvenir.person.name} purchased a ${souvenir.thing.name} from ${souvenir.place.name}
+                <button type="submit">x</button></li>
+            </form>
+            ` 
         }
         )}
+
+        
     </ul>
 </body>
 `;
