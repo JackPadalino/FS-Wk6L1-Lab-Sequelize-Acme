@@ -1,7 +1,7 @@
 {
   "name": "fs-wk6l1-lab-acme",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repo for Fullstack Week 6 Lesson 1 Lab: Acme Express  and Sequelize practice",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,5 +20,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackPadalino/FS-Wk6L1-Lab-Sequelize-Acme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JackPadalino/FS-Wk6L1-Lab-Sequelize-Acme/issues"
+  },
+  "homepage": "https://github.com/JackPadalino/FS-Wk6L1-Lab-Sequelize-Acme#readme"
 }
