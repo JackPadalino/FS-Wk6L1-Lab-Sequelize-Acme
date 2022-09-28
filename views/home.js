@@ -80,9 +80,7 @@ function home(people,places,things,souvenirs){
             </form>
             ` 
         }
-        )}
-
-        
+        )} 
     </ul>
 </body>
 `;
