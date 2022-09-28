@@ -41,7 +41,7 @@ router.post('/',async(req,res,next)=>{
 router.delete('/:id',async(req,res,next)=>{
     try{
         const souvenirId = req.params.id;
-        const souvenir = await Souvenir.findByPk(souvenirId);
+        const souvenir = await Souvenir.findByPk(+souvenirId);
         await souvenir.destroy();
         res.redirect('/');
     }catch(error){
