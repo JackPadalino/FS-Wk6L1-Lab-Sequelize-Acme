@@ -1,29 +1,8 @@
-const Sequelize = require('sequelize');
-const db = new Sequelize('postgres://localhost:5432/acme');
-
-const Person = db.define('person',{
-    name:{
-        type:Sequelize.STRING,
-        allowNull:false,
-        unique:true
-    }
-});
-const Place = db.define('place',{
-    name:{
-        type:Sequelize.STRING,
-        allowNull:false,
-        unique:true
-    }
-});
-const Thing = db.define('thing',{
-    name:{
-        type:Sequelize.STRING,
-        allowNull:false,
-        unique:true
-    }
-});
-
-const Souvenir = db.define('souvenir',{});
+const db = require('./db');
+const Person = require('./person');
+const Place = require('./place');
+const Thing = require('./thing');
+const Souvenir = require('./souvenir');
 
 Souvenir.belongsTo(Person);
 Souvenir.belongsTo(Place);

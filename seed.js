@@ -1,6 +1,6 @@
 const {
     db,Person,Place,Thing,Souvenir
-} = require('.');
+} = require('./db');
 
 const seedDB=async()=>{
     await db.sync({force:true,logging:false});
